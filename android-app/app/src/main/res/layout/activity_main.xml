@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/IMUHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="IMU"
@@ -37,5 +37,13 @@
         android:layout_height="wrap_content"
         android:text="Yaw: 0.0 deg"
         android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/ControlHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:text="Control Loop"
+        android:textSize="30sp" />
 
 </LinearLayout>

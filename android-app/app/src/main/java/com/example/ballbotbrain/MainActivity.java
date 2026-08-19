@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity implements IMU.IMUListener {
 
     IMU imu;
+    PDFController pdfController;
     TextView pitchInput, rollInput, yawInput;
 
     @Override
@@ -35,10 +36,12 @@ public class MainActivity extends AppCompatActivity implements IMU.IMUListener {
     }
 
     @Override
-    public void onOrientationChanged(float pitch, float roll, float yaw) {
+    public void onOrientationChanged(float pitch, float roll, float yaw, float pitchR, float rollR, float yawR) {
         pitchInput.setText(String.format("Pitch: " + pitch + " deg"));
         rollInput.setText(String.format("Roll: " + roll + " deg"));
         yawInput.setText(String.format("Yaw: " + yaw + " deg"));
+
+        pdfController.updateValues(pitch, roll, pitchR, rollR);
     }
 
     @Override
